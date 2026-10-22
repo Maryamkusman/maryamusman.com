@@ -82,7 +82,7 @@ h2::before{content:"//";display:block;font-family:var(--mono);font-size:.9rem;fo
 .btn.green:hover{color:#fff}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.pink,:root:not([data-theme="light"]) .btn.green{color:#1A120D}}
 
-.photo-wrap{position:relative;justify-self:center;width:min(100%,24rem)}
+.photo-wrap{position:relative;isolation:isolate;justify-self:center;width:min(100%,24rem)}
 .photo-wrap::before{content:"";position:absolute;inset:6%;border-radius:50%;background:conic-gradient(from 200deg,var(--pink),var(--caramel),var(--cactus),var(--pink));filter:blur(48px);opacity:.45;z-index:-1}
 .photo{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:50%}
 .sticker{position:absolute;font-family:var(--mono);font-weight:500;font-size:.8rem;padding:.5rem .95rem;border-radius:999px;border:0;cursor:pointer;transition:transform .2s ease;min-height:40px;color:var(--ink);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 6px 24px rgba(0,0,0,.12)}

@@ -116,6 +116,16 @@ section{padding:4.5rem 0}
 .now strong{color:var(--ink);font-weight:600}
 @media (max-width: 34rem){.now li{grid-template-columns:1fr;gap:.35rem}}
 
+.shipped-h{font-size:1.6rem;font-weight:600;letter-spacing:-.02em;margin:3.5rem 0 .4rem}
+.shipped-sub{color:var(--muted);margin:0 0 1.25rem}
+.ship{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ship li{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:1rem .25rem;border-bottom:1px solid var(--line)}
+.ship time{font-family:var(--mono);font-size:.8rem;color:var(--muted);padding-top:.2rem;font-variant-numeric:tabular-nums}
+.ship p{margin:0;color:var(--muted);max-width:44rem}
+.ship strong{color:var(--ink);font-weight:600}
+.ship+.btn{margin-top:1.25rem}
+@media (max-width: 34rem){.ship li{grid-template-columns:1fr;gap:.25rem}}
+
 .roles{display:grid;border-top:1px solid var(--line)}
 .role{border-bottom:1px solid var(--line)}
 .role summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1.35rem .25rem;min-height:44px;transition:padding .2s}
@@ -328,6 +338,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
           <p>A Georgia Tech team project: a game backend in Java with Spring Boot and Maven, containerized with Docker to standardize builds and deployment.</p>
         </div>
       </div>
+      <h3 class="shipped-h" id="shipped">Shipped log</h3>
+      <p class="shipped-sub">A running list of things I've put out into the world, newest first.</p>
+      <ul class="ship" id="ship"></ul>
     </div>
   </section>
 
@@ -466,6 +479,29 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       box.querySelectorAll('.recipe').forEach(function(c){c.hidden=!(f.dataset.f==='all'||c.dataset.k===f.dataset.f);});
     });
   });
+})();
+
+/* ---------- Shipped log ---------- */
+(function(){
+  // Newest first. Add new entries to the top: {d:'YYYY-MM', t:'Title', p:'One line', u:'optional link'}
+  var L=[
+    {d:'2026',t:'FullChair',p:'AI receptionist for salons: a Claude agent that books, reschedules, and takes deposits over SMS, voice, and Instagram.',u:'https://github.com/maryamkusman/AI-Receptionist'},
+    {d:'2026',t:'2Rook bot',p:'A minimax + alpha-beta bot for 2-Rook Isolation, playable on this site.',u:'#play'},
+    {d:'2023',t:'CarsXE API docs',p:'Rebuilt the API documentation web app from Nuxt.js to Next.js.'},
+    {d:'2023',t:'CarsXE cloud functions in TypeScript',p:'Migrated cloud functions from JavaScript to TypeScript, cutting bugs by 25%.'},
+    {d:'2022',t:'Battery metrics dashboards',p:'InfluxDB on AWS plus Grafana dashboards for Inventus Power engineers.'}
+  ];
+  var SHOW=5,box=document.getElementById('ship');
+  function fmt(d){var m=d.split('-');return m[1]?['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m[1]-1]+' '+m[0]:m[0];}
+  box.innerHTML=L.map(function(x,i){
+    var title=x.u?'<a href="'+x.u+'">'+x.t+'</a>':x.t;
+    return '<li'+(i>=SHOW?' hidden':'')+'><time datetime="'+x.d+'">'+fmt(x.d)+'</time><p><strong>'+title+'.</strong> '+x.p+'</p></li>';
+  }).join('');
+  if(L.length>SHOW){
+    var b=document.createElement('button');b.type='button';b.className='btn';b.textContent='Show all '+L.length;
+    b.addEventListener('click',function(){box.querySelectorAll('li[hidden]').forEach(function(li){li.hidden=false;});b.remove();});
+    box.after(b);
+  }
 })();
 
 /* ---------- 2-Rook Isolation ---------- */

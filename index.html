@@ -105,6 +105,17 @@ h2::before{content:"//";display:block;font-family:var(--mono);font-size:.9rem;fo
 section{padding:4.5rem 0}
 .band{background:var(--card);border-block:1px solid var(--line)}
 
+.live{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--cactus);margin-right:.6rem;vertical-align:2px;box-shadow:0 0 0 0 color-mix(in srgb,var(--cactus) 60%,transparent);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.stamp{font-family:var(--mono);font-size:.75rem;margin-left:.5rem;opacity:.8}
+.now{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.now li{display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:1.25rem .25rem;border-bottom:1px solid var(--line)}
+.now-k{font-family:var(--mono);font-size:.8rem;color:var(--pink);padding-top:.2rem}
+.now-k::before{content:"> ";color:var(--muted)}
+.now p{margin:0;color:var(--muted);max-width:44rem}
+.now strong{color:var(--ink);font-weight:600}
+@media (max-width: 34rem){.now li{grid-template-columns:1fr;gap:.35rem}}
+
 .roles{display:grid;border-top:1px solid var(--line)}
 .role{border-bottom:1px solid var(--line)}
 .role summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1.35rem .25rem;min-height:44px;transition:padding .2s}
@@ -229,6 +240,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       </div>
     </div>
   </div>
+
+  <section id="now" aria-labelledby="now-h">
+    <div class="wrap">
+      <h2 id="now-h">Now</h2>
+      <p class="sub"><span class="live" aria-hidden="true"></span>What I'm up to this month. <span class="stamp">Updated Oct 2026</span></p>
+      <ul class="now">
+        <li><span class="now-k">building</span><p><strong>FullChair at WDZ Solutions.</strong> An AI receptionist for salons. A Claude agent books, reschedules, and takes deposits over SMS, voice, and Instagram.</p></li>
+        <li><span class="now-k">shipping</span><p><strong>My Job Application Tracker.</strong> A Spring Boot API with a React frontend, built in the open on <a href="https://github.com/maryamkusman/job-application-tracker">GitHub</a>.</p></li>
+        <li><span class="now-k">brewing</span><p><strong>Fall coffee experiments.</strong> Testing new lattes for the <a href="#recipes">recipes page</a>.</p></li>
+      </ul>
+    </div>
+  </section>
 
   <section class="band" id="experience" aria-labelledby="exp-h">
     <div class="wrap">

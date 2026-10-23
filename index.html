@@ -10,20 +10,20 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FBF3EA;
-  --card:#FFFFFF;
-  --ink:#2B1A12;
-  --muted:#6E5546;
-  --line:#EBDCCD;
-  --espresso:#3B2418;
-  --cactus:#2E7A4E;
-  --cactus-soft:#D7EBDD;
-  --pink:#E2577F;
-  --pink-soft:#FBDDE6;
-  --caramel:#D98B1F;
-  --caramel-soft:#FBE6C4;
-  --burnt:#5A4337;
-  --on-dark:#FFF7EF;
+  --bg:#FFFFFF;
+  --card:#F6F5F2;
+  --ink:#0B0B0B;
+  --muted:#5E5E5E;
+  --line:#E4E2DD;
+  --espresso:#0B0B0B;
+  --cactus:#0B0B0B;
+  --cactus-soft:#ECEBE7;
+  --pink:#C4122F;
+  --pink-soft:#F6DDE0;
+  --caramel:#A8865A;
+  --caramel-soft:#F1E9DC;
+  --burnt:#9A9893;
+  --on-dark:#FFFFFF;
   --display:Arial, "Helvetica Neue", Helvetica, sans-serif;
   --body:Arial, "Helvetica Neue", Helvetica, sans-serif;
   --mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -33,15 +33,15 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#1A120D; --card:#251912; --ink:#F6EAE0; --muted:#C9B2A3; --line:#3A2A20;
-    --espresso:#F6EAE0; --cactus:#6FCB95; --cactus-soft:#1F3428; --pink:#FF8BAA; --pink-soft:#3D1F29;
-    --caramel:#F2B45A; --caramel-soft:#3A2A14; --burnt:#4A372C; --on-dark:#1A120D;
+    --bg:#0A0A0A; --card:#151515; --ink:#F5F3EF; --muted:#A8A6A1; --line:#2A2A2A;
+    --espresso:#F5F3EF; --cactus:#F5F3EF; --cactus-soft:#232323; --pink:#FF4D5E; --pink-soft:#3A1418;
+    --caramel:#D4B483; --caramel-soft:#2E261A; --burnt:#4A4A4A; --on-dark:#0A0A0A;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#1A120D; --card:#251912; --ink:#F6EAE0; --muted:#C9B2A3; --line:#3A2A20;
-  --espresso:#F6EAE0; --cactus:#6FCB95; --cactus-soft:#1F3428; --pink:#FF8BAA; --pink-soft:#3D1F29;
-  --caramel:#F2B45A; --caramel-soft:#3A2A14; --burnt:#4A372C; --on-dark:#1A120D;
+  --bg:#0A0A0A; --card:#151515; --ink:#F5F3EF; --muted:#A8A6A1; --line:#2A2A2A;
+  --espresso:#F5F3EF; --cactus:#F5F3EF; --cactus-soft:#232323; --pink:#FF4D5E; --pink-soft:#3A1418;
+  --caramel:#D4B483; --caramel-soft:#2E261A; --burnt:#4A4A4A; --on-dark:#0A0A0A;
 }
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 5rem)}
@@ -78,9 +78,9 @@ h2::before{content:"//";display:block;font-family:var(--mono);font-size:.9rem;fo
 .btn:hover{transform:translateY(-2px);border-color:var(--ink);color:var(--ink)}
 .btn.pink{background:var(--pink);border-color:var(--pink);color:#fff}
 .btn.pink:hover{color:#fff}
-.btn.green{background:var(--cactus);border-color:var(--cactus);color:#fff}
-.btn.green:hover{color:#fff}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.pink,:root:not([data-theme="light"]) .btn.green{color:#1A120D}}
+.btn.green{background:var(--cactus);border-color:var(--cactus);color:var(--on-dark)}
+.btn.green:hover{color:var(--on-dark)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.pink{color:#0A0A0A}}
 
 .photo-wrap{position:relative;isolation:isolate;justify-self:center;width:min(100%,24rem)}
 .photo-wrap::before{content:"";position:absolute;inset:6%;border-radius:50%;background:conic-gradient(from 200deg,var(--pink),var(--caramel),var(--cactus),var(--pink));filter:blur(48px);opacity:.45;z-index:-1}
@@ -162,7 +162,7 @@ section{padding:4.5rem 0}
 .sq{border:0;border-radius:10px;background:var(--card);cursor:default;padding:0;display:grid;place-items:center;font-size:clamp(1.2rem,5vw,1.9rem);line-height:1;min-width:0;transition:background .2s,transform .15s;color:var(--ink);font-family:var(--body)}
 .sq.burn{background:var(--burnt);background-image:repeating-linear-gradient(45deg,transparent 0 6px,rgba(0,0,0,.18) 6px 12px)}
 .sq.you{background:var(--pink);color:#fff;cursor:pointer}
-.sq.bot{background:var(--cactus);color:#fff}
+.sq.bot{background:var(--cactus);color:var(--on-dark)}
 .sq.sel{outline:4px solid var(--caramel);outline-offset:-4px}
 .sq.target{background:var(--caramel-soft);cursor:pointer}
 .sq.target::after{content:"";width:28%;aspect-ratio:1;border-radius:50%;background:var(--caramel)}

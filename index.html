@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Maryam Usman | Software &amp; AI Engineer</title>
-<meta name="description" content="Maryam Usman: software engineer - full-stack apps, backends, and AI systems. Coffee person and builder of a 2Rook bot you probably can't beat.">
+<meta name="description" content="Maryam Usman: software engineer - full-stack apps, backends, and AI systems. Coffee person.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -157,34 +157,7 @@ section{padding:4.5rem 0}
 .panel:hover{border-color:color-mix(in srgb,var(--pink) 60%,transparent);box-shadow:var(--glow)}
 .panel h3{font-size:1.4rem;letter-spacing:-.01em;margin-bottom:.5rem}
 .panel p{margin:.25rem 0;color:var(--muted)}
-.panel.play{background:linear-gradient(135deg,var(--espresso),color-mix(in srgb,var(--pink) 35%,var(--espresso)));color:var(--on-dark);border-color:var(--espresso)}
-.panel.play p{color:color-mix(in srgb,var(--on-dark) 80%,transparent)}
-.panel.play .btn{margin-top:1rem;color:var(--on-dark);background:transparent;border-color:color-mix(in srgb,var(--on-dark) 60%,transparent)}
-.panel.play .btn:hover{background:var(--pink);border-color:var(--pink);color:#fff}
-
 .wip{display:inline-block;font-family:var(--label);font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:999px;border:1px solid var(--cactus);color:var(--cactus);background:var(--cactus-soft);margin-bottom:.7rem}
-
-/* Game */
-.game{display:grid;grid-template-columns:minmax(0,30rem) 1fr;gap:2.5rem;align-items:start;padding:3.5rem 0 5rem}
-.board{display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(7,1fr);gap:4px;background:var(--line);padding:4px;border-radius:12px;aspect-ratio:1;width:100%;border:1px solid color-mix(in srgb,var(--pink) 40%,transparent);box-shadow:var(--glow)}
-.sq{border:0;border-radius:6px;background:var(--card);cursor:default;padding:0;display:grid;place-items:center;font-size:clamp(1.2rem,5vw,1.9rem);line-height:1;min-width:0;min-height:0;transition:background .2s,transform .15s;color:var(--ink);font-family:var(--body)}
-.sq.burn{background:var(--burnt);background-image:repeating-linear-gradient(45deg,transparent 0 6px,rgba(255,255,255,.5) 6px 7px)}
-.sq.you{background:var(--pink);color:#fff;cursor:pointer;box-shadow:0 0 14px color-mix(in srgb,var(--pink) 55%,transparent)}
-.sq.bot{background:var(--cactus);color:#fff;box-shadow:0 0 14px color-mix(in srgb,var(--cactus) 55%,transparent)}
-.sq.sel{outline:3px solid var(--caramel);outline-offset:-3px}
-.sq.target{background:var(--caramel-soft);cursor:pointer}
-.sq.target::after{content:"";width:28%;aspect-ratio:1;border-radius:50%;background:var(--caramel);box-shadow:0 0 10px var(--caramel)}
-.sq.target:hover{transform:scale(.94)}
-.sq.last{box-shadow:inset 0 0 0 3px var(--caramel)}
-.status{font-family:var(--label);font-weight:500;font-size:1.15rem;line-height:1.4;margin:0 0 .75rem;min-height:2.8em;color:var(--pink)}
-.status::before{content:"> ";color:var(--muted)}
-.rules{color:var(--muted);padding-left:1.2rem;margin:1rem 0 1.5rem}
-.rules li{margin:.4rem 0}
-.rules li::marker{font-family:var(--label);color:var(--pink)}
-.score{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1.5rem}
-.score span{padding:.45rem 1rem;border-radius:999px;font-family:var(--label);font-size:.85rem;font-weight:600}
-.legend{display:flex;gap:1rem;flex-wrap:wrap;font-family:var(--label);font-size:.78rem;color:var(--muted);margin-top:1rem}
-.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:.35rem;vertical-align:-2px}
 
 /* Recipes */
 .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
@@ -215,7 +188,6 @@ footer span::before{content:"© ";color:var(--pink)}
   .hero{grid-template-columns:1fr;padding:2.5rem 0 5rem;gap:3rem}
   .photo-wrap{width:min(80%,20rem)}
   .duo{grid-template-columns:1fr}
-  .game{grid-template-columns:1fr;padding-top:2rem}
   .role summary{grid-template-columns:auto 1fr}
   .role .when{grid-column:2;text-align:left}
   .role ul{padding-left:1.5rem}
@@ -229,7 +201,6 @@ footer span::before{content:"© ";color:var(--pink)}
     <a class="logo" href="#home">Maryam</a>
     <nav class="tabs" aria-label="Pages">
       <a class="tab" href="#home" data-tab="home">Home</a>
-      <a class="tab" href="#play" data-tab="play">Play my bot</a>
       <a class="tab" href="#recipes" data-tab="recipes">Coffee recipes</a>
     </nav>
   </div>
@@ -249,8 +220,7 @@ footer span::before{content:"© ";color:var(--pink)}
         </div>
         <p class="lede">I build AI agents, full-stack apps, and the backends that keep them running usually with an iced latte nearby</p>
         <div class="cta-row">
-          <a class="btn pink" href="#play">Try to beat my bot</a>
-          <a class="btn" href="mailto:mausman1000@gmail.com">Email me</a>
+          <a class="btn pink" href="mailto:mausman1000@gmail.com">Email me</a>
           <a class="btn" href="https://www.linkedin.com/in/maryamkusman">LinkedIn</a>
         </div>
       </div>
@@ -329,13 +299,8 @@ footer span::before{content:"© ";color:var(--pink)}
   <section aria-labelledby="proj-h">
     <div class="wrap">
       <h2 id="proj-h" data-kicker="Portfolio">Things I've made</h2>
-      <p class="sub">A game you can play right now, an app I'm building, and a few more.</p>
+      <p class="sub">A hackathon win, an app I'm building, and more.</p>
       <div class="duo">
-        <div class="panel play">
-          <h3>2Rook game-playing AI</h3>
-          <p>An AI agent for 2-Rook Isolation that searches ahead with minimax and alpha-beta pruning to pick the strongest move in real time.</p>
-          <a class="btn" href="#play">Play against it</a>
-        </div>
         <div class="panel">
           <h3>Matching Funds</h3>
           <p>1st place, UCSD Hackathon. A web app that streamlines funding requests between student organizations and sponsors.</p>
@@ -395,38 +360,6 @@ footer span::before{content:"© ";color:var(--pink)}
   </section>
 </div>
 
-<!-- PLAY -->
-<div class="view" id="v-play">
-  <div class="wrap">
-    <div class="game">
-      <div>
-        <div class="board" id="board" role="grid" aria-label="2-Rook Isolation board, 7 by 7"></div>
-        <div class="legend">
-          <span><i style="background:var(--pink)"></i>Your rooks</span>
-          <span><i style="background:var(--cactus)"></i>My bot</span>
-          <span><i style="background:var(--burnt)"></i>Burned square</span>
-        </div>
-      </div>
-      <div>
-        <h2 data-kicker="The game" style="font-size:clamp(2.4rem,5vw,3.6rem)">Beat my bot</h2>
-        <p class="status" id="status" role="status" aria-live="polite">Your move. Pick a pink rook.</p>
-        <div class="score">
-          <span style="background:var(--pink-soft)">You: <b id="sYou">0</b></span>
-          <span style="background:var(--cactus-soft)">Bot: <b id="sBot">0</b></span>
-        </div>
-        <ol class="rules">
-          <li>You each have two rooks. On your turn, move one of them any distance in a straight line, like a chess rook.</li>
-          <li>Rooks can't jump over burned squares or other rooks.</li>
-          <li>The square you leave burns and can never be used again.</li>
-          <li>If it's your turn and neither of your rooks can move, you lose.</li>
-        </ol>
-        <p style="color:var(--muted);margin:0 0 1.25rem">The bot looks several moves ahead with minimax and alpha-beta pruning. Good luck.</p>
-        <button class="btn pink" id="restart" type="button">New game</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- RECIPES -->
 <div class="view" id="v-recipes">
   <div class="wrap" style="padding-top:3.5rem">
@@ -448,7 +381,7 @@ footer span::before{content:"© ";color:var(--pink)}
 <script>
 /* ---------- Tabs ---------- */
 (function(){
-  var views={home:'v-home',play:'v-play',recipes:'v-recipes'};
+  var views={home:'v-home',recipes:'v-recipes'};
   function show(){
     var h=(location.hash||'#home').slice(1);
     var target=views[h]?h:(document.getElementById(h)?'home':'home');
@@ -499,7 +432,6 @@ footer span::before{content:"© ";color:var(--pink)}
   // Newest first. Add new entries to the top: {d:'YYYY-MM', t:'Title', p:'One line', u:'optional link'}
   var L=[
     {d:'2026',t:'FullChair',p:'AI receptionist for salons: a Claude agent that books, reschedules, and takes deposits over SMS, voice, and Instagram.',u:'https://github.com/maryamkusman/AI-Receptionist'},
-    {d:'2026',t:'2Rook bot',p:'A minimax + alpha-beta bot for 2-Rook Isolation, playable on this site.',u:'#play'},
     {d:'2023',t:'CarsXE API docs',p:'Rebuilt the API documentation web app from Nuxt.js to Next.js.'},
     {d:'2023',t:'CarsXE cloud functions in TypeScript',p:'Migrated cloud functions from JavaScript to TypeScript, cutting bugs by 25%.'},
     {d:'2022',t:'Battery metrics dashboards',p:'InfluxDB on AWS plus Grafana dashboards for Inventus Power engineers.'}
@@ -515,131 +447,6 @@ footer span::before{content:"© ";color:var(--pink)}
     b.addEventListener('click',function(){box.querySelectorAll('li[hidden]').forEach(function(li){li.hidden=false;});b.remove();});
     box.after(b);
   }
-})();
-
-/* ---------- 2-Rook Isolation ---------- */
-(function(){
-  var N=7,DIRS=[[1,0],[-1,0],[0,1],[0,-1]];
-  var boardEl=document.getElementById('board'),statusEl=document.getElementById('status');
-  var sYou=document.getElementById('sYou'),sBot=document.getElementById('sBot');
-  var wins={you:0,bot:0},S,sel=null,busy=false,over=false,last=null,cells=[];
-  try{var saved=JSON.parse(localStorage.getItem('rookScore')||'null');if(saved)wins=saved;}catch(e){}
-
-  function fresh(){return{burn:new Array(N*N).fill(false),r:[[0,48],[6,42]],turn:0};} // 0 = you, 1 = bot
-  function occ(s,i){return s.r[0][0]===i||s.r[0][1]===i||s.r[1][0]===i||s.r[1][1]===i;}
-  function moves(s,p){
-    var out=[];
-    for(var k=0;k<2;k++){
-      var from=s.r[p][k],x=from%N,y=(from/N)|0;
-      for(var d=0;d<4;d++){
-        var nx=x+DIRS[d][0],ny=y+DIRS[d][1];
-        while(nx>=0&&ny>=0&&nx<N&&ny<N){
-          var i=ny*N+nx;if(s.burn[i]||occ(s,i))break;
-          out.push([k,i]);nx+=DIRS[d][0];ny+=DIRS[d][1];
-        }
-      }
-    }
-    return out;
-  }
-  function count(s,p){
-    var c=0;
-    for(var k=0;k<2;k++){
-      var from=s.r[p][k],x=from%N,y=(from/N)|0;
-      for(var d=0;d<4;d++){
-        var nx=x+DIRS[d][0],ny=y+DIRS[d][1];
-        while(nx>=0&&ny>=0&&nx<N&&ny<N){var i=ny*N+nx;if(s.burn[i]||occ(s,i))break;c++;nx+=DIRS[d][0];ny+=DIRS[d][1];}
-      }
-    }
-    return c;
-  }
-  function apply(s,p,m){
-    var n={burn:s.burn.slice(),r:[s.r[0].slice(),s.r[1].slice()],turn:1-p};
-    n.burn[s.r[p][m[0]]]=true;n.r[p][m[0]]=m[1];return n;
-  }
-
-  /* Bot: iterative deepening alpha-beta (negamax) */
-  var deadline,TIMEOUT={};
-  function evalFor(s,p){return count(s,p)-2*count(s,1-p);}
-  function ab(s,p,depth,a,b){
-    if(Date.now()>deadline)throw TIMEOUT;
-    var ms=moves(s,p);
-    if(!ms.length)return -10000-depth;
-    if(depth===0)return evalFor(s,p);
-    for(var i=0;i<ms.length;i++){
-      var v=-ab(apply(s,p,ms[i]),1-p,depth-1,-b,-a);
-      if(v>a)a=v;if(a>=b)break;
-    }
-    return a;
-  }
-  function botMove(s){
-    var ms=moves(s,1);if(!ms.length)return null;
-    deadline=Date.now()+900;var best=ms[0];
-    ms.sort(function(x,y){return evalFor(apply(s,1,y),1)-evalFor(apply(s,1,x),1);});
-    try{
-      for(var depth=1;depth<40;depth++){
-        var a=-Infinity,cur=ms[0],scored=[];
-        for(var i=0;i<ms.length;i++){
-          var v=-ab(apply(s,1,ms[i]),0,depth-1,-Infinity,-a);
-          scored.push([v,ms[i]]);
-          if(v>a){a=v;cur=ms[i];}
-        }
-        best=cur;
-        scored.sort(function(x,y){return y[0]-x[0];});ms=scored.map(function(x){return x[1];});
-        if(a>=10000-40)break;
-      }
-    }catch(e){if(e!==TIMEOUT)throw e;}
-    return best;
-  }
-
-  function build(){
-    boardEl.innerHTML='';cells=[];
-    for(var i=0;i<N*N;i++){
-      var b=document.createElement('button');b.type='button';b.className='sq';b.dataset.i=i;
-      b.addEventListener('click',click);boardEl.appendChild(b);cells.push(b);
-    }
-  }
-  function name(i){return 'abcdefg'[i%N]+(N-((i/N)|0));}
-  function render(){
-    var targets={};
-    if(sel!==null)moves(S,0).forEach(function(m){if(m[0]===sel)targets[m[1]]=1;});
-    cells.forEach(function(c,i){
-      var cls='sq',label=name(i)+', empty',txt='';
-      if(S.burn[i]){cls+=' burn';label=name(i)+', burned';}
-      else if(S.r[0][0]===i||S.r[0][1]===i){cls+=' you';txt='♜';label=name(i)+', your rook';if(sel!==null&&S.r[0][sel]===i)cls+=' sel';}
-      else if(S.r[1][0]===i||S.r[1][1]===i){cls+=' bot';txt='♜';label=name(i)+', bot rook';}
-      else if(targets[i]){cls+=' target';label=name(i)+', move here';}
-      if(last===i)cls+=' last';
-      c.className=cls;c.textContent=txt;c.setAttribute('aria-label',label);
-      c.disabled=over||busy||!(cls.indexOf(' you')>-1||targets[i]);
-    });
-    sYou.textContent=wins.you;sBot.textContent=wins.bot;
-  }
-  function end(winner){
-    over=true;wins[winner]++;
-    try{localStorage.setItem('rookScore',JSON.stringify(wins));}catch(e){}
-    statusEl.textContent=winner==='bot'?'You\u2019re out of moves. My bot wins. Rematch?':'You beat it! Please email me how.';
-    render();
-  }
-  function click(e){
-    if(busy||over)return;
-    var i=+e.currentTarget.dataset.i;
-    var k=S.r[0].indexOf(i);
-    if(k>-1){sel=(sel===k)?null:k;statusEl.textContent=sel===null?'Your move. Pick a pink rook.':'Now pick a square to slide to.';render();return;}
-    if(sel===null)return;
-    var m=moves(S,0).filter(function(m){return m[0]===sel&&m[1]===i;})[0];
-    if(!m)return;
-    S=apply(S,0,m);sel=null;last=i;
-    if(!moves(S,1).length){end('you');return;}
-    busy=true;statusEl.textContent='Bot is thinking…';render();
-    setTimeout(function(){
-      var bm=botMove(S);S=apply(S,1,bm);last=bm[1];busy=false;
-      if(!moves(S,0).length){end('bot');return;}
-      statusEl.textContent='Your move. Pick a pink rook.';render();
-    },60);
-  }
-  function start(){S=fresh();sel=null;busy=false;over=false;last=null;statusEl.textContent='Your move. Pick a pink rook.';render();}
-  document.getElementById('restart').addEventListener('click',start);
-  build();start();
 })();
 </script>
 </body>

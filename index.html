@@ -156,6 +156,17 @@ section{padding:4.5rem 0}
 .panel:hover{border-color:color-mix(in srgb,var(--pink) 60%,transparent);box-shadow:var(--glow)}
 .panel h3{font-size:1.4rem;letter-spacing:-.01em;margin-bottom:.5rem}
 .panel p{margin:.25rem 0;color:var(--muted)}
+.panel.play{background:linear-gradient(135deg,var(--espresso),color-mix(in srgb,var(--pink) 35%,var(--espresso)));color:var(--on-dark);border-color:var(--espresso)}
+.panel.play p{color:color-mix(in srgb,var(--on-dark) 80%,transparent)}
+.panel.play .cta-row{margin-top:1rem}
+.panel.play .btn{color:var(--on-dark);background:transparent;border-color:color-mix(in srgb,var(--on-dark) 60%,transparent)}
+.panel.play .btn:hover,.panel.play .btn.pink{background:var(--pink);border-color:var(--pink);color:#fff}
+
+/* Connect 4 embed */
+.embed{border:1px solid color-mix(in srgb,var(--pink) 40%,transparent);border-radius:14px;overflow:hidden;background:var(--card);box-shadow:var(--glow)}
+.embed iframe{display:block;width:100%;height:900px;border:0}
+.embed-note{font-family:var(--label);font-size:.8rem;color:var(--muted);margin:1rem 0 5rem}
+
 .wip{display:inline-block;font-family:var(--label);font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:999px;border:1px solid var(--cactus);color:var(--cactus);background:var(--cactus-soft);margin-bottom:.7rem}
 
 /* Recipes */
@@ -187,6 +198,7 @@ footer span::before{content:"© ";color:var(--pink)}
   .hero{grid-template-columns:1fr;padding:2.5rem 0 5rem;gap:3rem}
   .photo-wrap{width:min(80%,20rem)}
   .duo{grid-template-columns:1fr}
+  .embed iframe{height:1500px}
   .role summary{grid-template-columns:auto 1fr}
   .role .when{grid-column:2;text-align:left}
   .role ul{padding-left:1.5rem}
@@ -200,6 +212,7 @@ footer span::before{content:"© ";color:var(--pink)}
     <a class="logo" href="#home">Maryam</a>
     <nav class="tabs" aria-label="Pages">
       <a class="tab" href="#home" data-tab="home">Home</a>
+      <a class="tab" href="#play" data-tab="play">Play Connect 4</a>
       <a class="tab" href="#recipes" data-tab="recipes">Coffee recipes</a>
     </nav>
   </div>
@@ -219,7 +232,8 @@ footer span::before{content:"© ";color:var(--pink)}
         </div>
         <p class="lede">I build AI agents, full-stack apps, and the backends that keep them running usually with an iced latte nearby</p>
         <div class="cta-row">
-          <a class="btn pink" href="mailto:mausman1000@gmail.com">Email me</a>
+          <a class="btn pink" href="#play">Play my AI bot</a>
+          <a class="btn" href="mailto:mausman1000@gmail.com">Email me</a>
           <a class="btn" href="https://www.linkedin.com/in/maryamkusman">LinkedIn</a>
         </div>
       </div>
@@ -298,12 +312,22 @@ footer span::before{content:"© ";color:var(--pink)}
   <section aria-labelledby="proj-h">
     <div class="wrap">
       <h2 id="proj-h" data-kicker="Portfolio">Things I've made</h2>
-      <p class="sub">A hackathon win, an app I'm building, and more.</p>
+      <p class="sub">A game you can play right now, a hackathon win, an app I'm building, and more.</p>
       <div class="duo">
+        <div class="panel play">
+          <h3>Connect 4 AI</h3>
+          <p>Play Connect 4 against an AI that searches ahead with minimax, alpha-beta pruning, and iterative deepening. Pick a difficulty and watch its live analysis: how far it looked ahead, how many positions it checked, and who it thinks is winning.</p>
+          <div class="cta-row">
+            <a class="btn pink" href="#play">Play it here</a>
+            <a class="btn" href="https://connect4-7a9u.onrender.com" target="_blank" rel="noopener">Open full screen</a>
+          </div>
+        </div>
         <div class="panel">
           <h3>Matching Funds</h3>
           <p>1st place, UCSD Hackathon. A web app that streamlines funding requests between student organizations and sponsors.</p>
-          <p><a href="https://devpost.com/software/matching-funds">See it on Devpost</a></p>
+          <div class="cta-row">
+            <a class="btn" href="https://devpost.com/software/matching-funds" target="_blank" rel="noopener">See it on Devpost</a>
+          </div>
         </div>
         <div class="panel">
           <span class="wip">In progress</span>
@@ -365,6 +389,18 @@ footer span::before{content:"© ";color:var(--pink)}
   </section>
 </div>
 
+<!-- PLAY -->
+<div class="view" id="v-play">
+  <div class="wrap" style="padding-top:3.5rem">
+    <h2 data-kicker="The game">Beat my Connect 4 AI</h2>
+    <p class="sub">It looks ahead with minimax and alpha-beta pruning. Choose easy, medium, or hard, and keep an eye on the analysis panel to see what it's thinking.</p>
+    <div class="embed">
+      <iframe src="https://connect4-7a9u.onrender.com" title="Connect 4 against an AI" loading="lazy"></iframe>
+    </div>
+    <p class="embed-note">If the board is blank, give it about 30 seconds while the server wakes up. You can also <a href="https://connect4-7a9u.onrender.com" target="_blank" rel="noopener">open the game full screen</a>.</p>
+  </div>
+</div>
+
 <!-- RECIPES -->
 <div class="view" id="v-recipes">
   <div class="wrap" style="padding-top:3.5rem">
@@ -386,7 +422,7 @@ footer span::before{content:"© ";color:var(--pink)}
 <script>
 /* ---------- Tabs ---------- */
 (function(){
-  var views={home:'v-home',recipes:'v-recipes'};
+  var views={home:'v-home',play:'v-play',recipes:'v-recipes'};
   function show(){
     var h=(location.hash||'#home').slice(1);
     var target=views[h]?h:(document.getElementById(h)?'home':'home');
